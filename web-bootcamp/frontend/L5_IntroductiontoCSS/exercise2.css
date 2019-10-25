@@ -1,0 +1,17 @@
+ul{
+	background:orange
+}
+
+li{
+	border: 2px solid red;
+
+
+}
+.frist_two{
+	text-decoration: line-through;
+}
+
+#last_thing{
+	background:yellow;
+	color:purple; 
+}

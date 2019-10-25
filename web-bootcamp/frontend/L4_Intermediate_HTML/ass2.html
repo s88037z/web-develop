@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="excercise1.css">
+
+<body>
+
+
+<h1>Register</h1>
+<!-- <from action="https://zh.wikipedia.org/wiki/Wiki" method="post"> -->
+<form >
+
+
+<label for="First name">First name</label>
+<input type="text" name="firstname" id="First name" placeholder="Jhon" required>
+<label for="Last name">Last name</label>
+<input type="text" name="lastname"  id="Last name" placeholder="Smith" required>
+
+
+<p>
+<label for="Male">Male</label>
+<input type="radio" name="gender" id="Male" value="Male">
+<label for="Female">Female</label>
+<input type="radio" name="gender" id="Female" value="Female">
+<label for="Other">Other</label>
+<input type="radio" name="gender" id="Other" value="Other">
+</p>
+
+<p>
+<label for="Email">Email:</label>
+<input type="email" name="email" id="Email" placeholder="your email" required>
+<label for="Password">Password</label>
+<input type="password" name="password" id="Password" pattern=".{5,10}"required title="please type 5-10 characters">
+</p>
+
+<p>
+<label>Birthday:
+	<select name="Month" >
+		<option value="">Month</option>
+		<option value="Jan">Jan</option>
+		<option value="Feb">Feb</option>
+		<option value="Mar">Mar</option>
+	</select>
+	<select name="Day" >
+		<option value="">Day</option>
+		<option value="Mon">Mon</option>
+		<option value="Tue">Tue</option>
+		<option value="Web">Web</option>
+	</select>
+	<select name="Year" >
+		<option value="">Year</option>
+		<option value="2011">2011</option>
+		<option value="2012">2012</option>
+		<option value="2013">2013</option>
+	</select>
+</label>	
+</p>
+
+<p>
+	<label>
+		I agree to terms and cinditions
+		<input type="checkbox" name="agree" value="yes">
+
+	</label>
+
+</p>
+
+
+
+
+<!-- <button>submit</button> -->
+<input type="submit">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+$("div").css("backgroundColor","purple")
+// $(".highlight").css("border","2px solid black")
+$(".highlight").css("width","200px")
+$("#third").css("border","2px solid orange")
+$("div").first().css("color","pink")
