@@ -1,0 +1,18 @@
+<% include partials/header %>
+
+
+<h1><%=campground.name%></h1>
+
+<img width="20%" src="<%=campground.image%>">
+<p><%=campground.description%></p>
+
+<% for(const comment of campground.comments){ %>
+	<p>
+		<strong><%= comment.author%></strong>-<%= comment.text%>
+
+	</p>
+
+<% } %>
+
+
+<% include partials/footer %>

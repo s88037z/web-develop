@@ -1,0 +1,14 @@
+<h1>Results page!</h1>
+<a href="/">Search again!</a>
+<%if(!data.Error){  %>
+	<%  data.Search.forEach( (movie) =>{ %>
+	  <ul>
+		<strong><li><%= movie.Title %> </li></strong>						
+		<img src=<%= movie.Poster %> >
+      </ul>
+	<% })} %>  
+
+<%if(data.Error){  %>
+	<h2>Movie not found!</h2>
+
+<% }%>

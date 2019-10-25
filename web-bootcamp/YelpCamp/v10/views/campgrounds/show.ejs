@@ -1,0 +1,84 @@
+<% include ../partials/header %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead" >YelpCamp</p>
+			<div class="list-group">
+				 <li class="list-group-item active">Info 1</li>
+				 <li class="list-group-item">Info 2</li>
+				 <li class="list-group-item">Info 3</li>
+				 <li class="list-group-item">Info 4</li>				
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="card" >
+				<img class="card-img-top" width="40%" src="<%=campground.image%>">
+				<div class="card-body">
+					<div class="card-title caption">
+						<h6 class="float-right">NT$ 1500 /night</h6>
+						<h4><a><%=campground.name%></a></h4>
+					</div>
+					<p class="card-text"><%=campground.description%></p>
+					<p>
+						<em>Submitted By <%=campground.author.username %></em>
+					</p>
+					<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+						<a class="btn btn-info btn-sm" href="/campgrounds/<%=campground._id%>/edit">
+							EDIT</a>
+						<form  class="delete-form"
+							  action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+							<button class=" btn btn-danger btn-sm">DELETE</button>
+						</form>
+					<% } %>
+					</div>
+				</div>
+			
+				
+			<div class="card card-body mt-4 mb-5 bg-light">
+				<div class="text-right ">
+					<p><a class="btn btn-success float-right" href="/campgrounds/<%=campground._id%>/comments/new">
+					Add New Comment</a></p>
+				</div>
+				<hr>
+				<% for(const comment of campground.comments){ %>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="mb-1">
+								<span class="float-right">10 days ago</span>
+							<strong><%= comment.author.username%></strong>
+							</div>
+							
+							<div class="row justify-content-between">
+								<div class="col-9">
+									<p class="group_text text-left"><%= comment.text%></p>
+								</div>
+								
+							  <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>		
+								<div class="text-right col-3">
+									<a class="btn btn-info btn-xs" 
+									href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit">
+									<i class="fas fa-pen"></i></a>
+									<form class="delete-form"
+									  action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" 
+									  method="POST">
+									<button class=" btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+									</form>
+								</div>
+							  <% } %>	
+							</div>
+							
+							<hr>
+							
+						</div>
+					</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<% include ../partials/footer %>

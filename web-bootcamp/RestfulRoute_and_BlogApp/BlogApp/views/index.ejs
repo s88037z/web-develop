@@ -1,0 +1,53 @@
+<% include partials/header%>
+
+
+
+<!-- the layout form Semantic UI's doc :https://semantic-ui.com/views/item.html#divided -->
+<div class="ui main text container">
+	<div class="ui huge header">Index page</div>
+	<div class="ui top attached segment">
+		<div class="ui divided items">
+			<% blogs.forEach((blog)=>{ %>
+				<div class="item">
+					<div class="image">
+						<img src="<%=blog.image%>">
+					</div>
+					
+					<div class="content">
+						<a class="header" href="/blogs/<%=blog._id %>"><%=blog.title %></a>
+						<div class="meta">
+							<span><%=blog.created.toDateString()%></span>
+						</div>
+						<div class="description">
+							<% if(blog.body.length<100){ %>
+							<p><%- blog.body %></p>					  
+							<% }else{ %>
+							<p> <%- blog.body.substring(0,100) %>......</p>						  					  
+							<% } %>					 
+						</div>
+						<div class="extra">
+							<a class="ui floated violet basic button" href="/blogs/<%=blog._id %>">
+								Read more
+								<i id="readmoreIcon"class="chevron right icon"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			<% })%>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include partials/footer%>
