@@ -1,0 +1,54 @@
+<% include ../partials/header %>
+
+
+  <div class="row">	
+	<h1 class="col-12 text-center">Edit <%=campground.name%></h1>
+	  
+	<div id="campground-form">
+		<form class="col-12 form-group" action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST"
+			  enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="campground-name">Campground's name</label>
+				<input class="form-control" name="campground[name]"  id="campground-name"
+					   value="<%=campground.name%>" type="text" required>
+			</div>
+			<div class="form-group">
+				<label for="campground-price">Price</label>
+				<input class="form-control" name="campground[price]"  value="<%=campground.price%>" 
+					  id="campground-price" type="number" min="0" step="1" required>
+			</div>
+			<div class="form-group">
+                <label for="image">Image</label>	
+				<div class="input-group mb-3">
+				  <div class="custom-file">
+					<input type="file" class="custom-file-input" 
+						   name="image"  id="image" accept="image/*" required>
+					<label class="custom-file-label" for="image">Choose file</label>
+				  </div>
+				</div>					
+            </div>
+			<div class="form-group">
+    			<label for="location">Location</label>
+    			<input class="form-control" type="text" name="campground[location]" 
+					   id="location" value="<%= campground.location %>">
+			</div>
+			
+			<div class="form-group">
+				<label for="location">Description</label>
+				<textarea id="location" class="form-control" 
+						  name="campground[description]"required><%=campground.description%>
+				</textarea>
+			</div>			
+			
+			
+			<div class="form-group">
+				<button class="btn btn-lg btn-primary btn-block" >Submit!</button>
+			</div>			
+				<a class="col-12" href="/campgrounds">Back</a>
+		</form>
+	</div>
+	  
+
+  </div>
+
+<% include ../partials/footer %>

@@ -1,0 +1,61 @@
+body{
+
+	
+}
+
+/* campground-form's width&height */
+#campground-form,#comment-form{
+	width:30% ; 
+	margin: 25px auto
+	
+}
+
+
+/* campfround index's search button */
+.jumbotron  .form-group .btn{
+	border: 1px solid #ced4da;
+	background-color: #ffffff;
+}
+
+
+/* text area's display */
+.card .card-text , .card .group_text{
+	white-space: pre-wrap;
+}
+.form-group textarea{
+	height: 180px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+
+.delete-form{
+	display:inline;
+}
+.group_text{
+	display:inline;
+}
+.group_btn{
+	margin-left:auto;
+	display:inline-block;
+}
+
+.btn-group-xs > .btn, .btn-xs {
+  padding: .25rem .4rem;
+  font-size: .875rem;
+  line-height: .5;
+  border-radius: .2rem;
+}

@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="card">
+			  <img src="<%=user.avatar%>" class="card-img-top" alt="user's avatar">
+			  <div class="card-body">
+				<h5 class="card-title"><%=user.firstName%> <%=user.lastName%></h5>
+				<p class="card-text">
+					Some quick example text to build on the card title and make up the bulk of the card's content.
+				 </p>
+				<a href="#" class="btn btn-primary">noFucntion</a>
+			  </div>
+		</div>
+	</div>
+	
+	<div class="col-md-8">
+		<h3><%=user.username%>'s campgrounds :</h3>
+		<ul>
+			<% campgrounds.forEach((campground)=>{ %>
+				<li><a href="/campgrounds/<%=campground._id%>"><%=campground.name%></a></li>
+			
+			<%  }) %>
+		</ul>
+	</div>
+	
+</div>
+
+
+
+<% include ../partials/footer %>

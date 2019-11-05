@@ -1,0 +1,32 @@
+<% include ./partials/header %>
+
+<div class=row>
+	
+	<h1 class="col-12 text-center pr-4 mb-4">Forgot</h1>
+	
+	<div style="" class="mx-auto  col-sm-10 col-md-8 col-lg-4 px-4">
+		<form class="text-center "action="/forgot" method="post">
+			<div class="form-group row text-center">
+					<label for="forgot-email" class=" col-4 col-form-label ">Email</label>
+					<div class="col-8 ">
+						<input id="forgot-email" class="form-control" type="email" 
+							   name="email" autofoucs>
+					</div>
+			</div>
+			<div class="col-8  mx-auto">
+				<button class="btn btn-lg btn-primary btn-block" >Recevie email</button>
+				<div class="col-12 text-left mt-3 pl-0">
+					<a  href="/campgrounds">Back</a>
+				</div>
+			</div>
+			
+		</form>
+		
+	</div>
+
+</div>
+
+
+
+
+<% include ./partials/footer %>
