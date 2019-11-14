@@ -2,8 +2,11 @@
 
 ## 1.Demo網站:TaiwanFan 
 簡介:分享、紀錄你在台灣的私房地點!  
+  
 url: https://taiwanfan-1116.herokuapp.com/  
+  
 主要使用工具:(nodejs、express、mongoDB、Bootstrap4)  
+  
 ### 功能介紹:
 * 使用RESTful routes
 * 會員可以新增地點、評論
@@ -13,5 +16,5 @@ url: https://taiwanfan-1116.herokuapp.com/
 * 顯示地點的google地圖
 * 登陸頁使用css動畫
 * 密碼重設功能(寄送認證信)
-* flash message
+* 使用flash message
 
