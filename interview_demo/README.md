@@ -20,7 +20,8 @@
 
 ## 2.靜態網頁demo:
 * Patatap Clone 
-* Todo List
+* Todo List 
+  https://codepen.io/s88037z/pen/xxxyjVB  
 * psd to html 切版練習
 * museum of candy
 * Color Game
