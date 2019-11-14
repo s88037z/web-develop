@@ -3,7 +3,7 @@
 ## 1.Demo網站:TaiwanFan 
 簡介:分享、紀錄你在台灣的私房地點!  
   
-url: https://taiwanfan-1116.herokuapp.com/  
+網址: https://taiwanfan-1116.herokuapp.com/  
   
 主要使用工具:(nodejs、express、mongoDB、Bootstrap4)  
   
@@ -18,3 +18,9 @@ url: https://taiwanfan-1116.herokuapp.com/
 * 密碼重設功能(寄送認證信)
 * 使用flash message
 
+## 2.靜態網頁demo:
+* Patatap Clone 
+* Todo List
+* psd to html 切版練習
+* museum of candy
+* Color Game
