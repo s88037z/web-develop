@@ -1,9 +1,9 @@
 # 作品介紹
 
 ## 1.Demo網站:TaiwanFan 
-分享在台灣的私房地點  
-https://taiwanfan-1116.herokuapp.com/  
-主要工具:(nodejs、express、mongoDB、Bootstrap4)  
+簡介:分享、紀錄你在台灣的私房地點!  
+url: https://taiwanfan-1116.herokuapp.com/  
+主要使用工具:(nodejs、express、mongoDB、Bootstrap4)  
 ### 功能介紹:
 * 使用RESTful routes
 * 會員可以新增地點、評論
