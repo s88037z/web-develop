@@ -1,0 +1,134 @@
+<% include ../partials/header %>
+
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead" >TaiwanFan</p>
+			<div class="list-group">
+				 <li class="list-group-item  bg-secondary text-white" >類別</li>
+				 <li class="list-group-item" id="scene">風景</li>
+				 <li class="list-group-item" id="culture">文化</li>
+				 <li class="list-group-item" id="food">美食</li>
+				 <li class="list-group-item" id="recreation">娛樂</li>				
+			</div>
+			<div class="my-3"id="map"></div>
+		</div>
+		<div class="col-md-9">
+			<div class="card" >
+				<img class="card-img-top" width="40%" src="<%=campground.image%>">
+				<div class="card-body">
+					<div class="card-title caption">
+						<%if(campground.price!=="0"){%>
+							<h6 class="float-right">預計花費:<%=`$${campground.price}`%></h6>
+						<%}%>
+						<h4><a><%=campground.name%></a></h4>
+					</div>
+					<hr> 
+					<p class="card-text"><%=campground.description%></p>
+					<p>
+						<em>由
+							<a href="/users/<%=campground.author.id%>"> <%=campground.author.username %></a> 
+							建立&nbsp;&nbsp;&nbsp;<%= moment(campground.createdAt).fromNow() %>
+						</em>
+					</p>
+					<% if(currentUser && campground.author.id.equals(currentUser._id) 
+						  || currentUser && currentUser.isAdmin ){ %>
+						<a class="btn btn-info btn-sm" href="/campgrounds/<%=campground._id%>/edit">
+							編輯</a>
+						<form  class="delete-form"
+							  action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+							<button class=" btn btn-danger btn-sm">刪除</button>
+						</form>
+					<% } %>
+					</div>
+				</div>
+			
+				
+			<div class="card card-body mt-4 mb-5 bg-light">
+				<div class="text-right ">
+					<p><a class="btn btn-success float-right" href="/campgrounds/<%=campground._id%>/comments/new">
+					留下你的評論</a></p>
+				</div>
+				<hr>
+				<% for(const comment of campground.comments){ %>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="mb-1">
+								<span class="float-right"><%= moment(comment.createdAt).fromNow() %></span>
+							<strong><%= comment.author.username%></strong>
+							</div>
+							
+							<div class="row justify-content-between">
+								<div class="col-9">
+									<p class="group_text text-left"><%= comment.text%></p>
+								</div>
+								
+							  <% if(currentUser && comment.author.id.equals(currentUser._id)
+								   || currentUser && currentUser.isAdmin){ %>		
+								<div class="text-right col-3">
+									<a class="btn btn-info btn-xs" 
+									href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit">
+									<i class="fas fa-pen"></i></a>
+									<form class="delete-form"
+									  action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" 
+									  method="POST">
+									<button class=" btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+									</form>
+								</div>
+							  <% } %>	
+							</div>
+							
+							<hr>
+							
+						</div>
+					</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+
+<!-- choose the campground's category -->
+<script>
+	
+	  $("#<%=campground.category%>").addClass("active")
+
+
+
+
+</script>
+
+
+
+<!-- google map script -->
+<script>
+  function initMap() {
+    var lat = <%= campground.lat %>;
+    var lng = <%= campground.lng %>;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= campground.name %><br />
+      <%= campground.location %></strong>
+      <p><%= campground.description %></p>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer 
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUjqtusKmd--foEHLE2KmjRLPc4Kn7Rw0&callback=initMap">
+</script>
+
+
+<% include ../partials/footer %>
