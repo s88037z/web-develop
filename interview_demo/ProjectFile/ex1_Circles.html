@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/circles.css">
+    <script type="text/javascript" src="js\lib\paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+        
+        for (var yi=0;yi<10;yi++){
+
+            for(var xi=0;xi<10;xi++){
+                var myCircle = new Path.Circle(new Point(xi*100, yi*100), 10);
+                myCircle.fillColor = 'pink';    
+
+            }
+
+        }
+        
+        // var myCircle = new Path.Circle(new Point(0, 100), 100);
+        // myCircle.fillColor = 'pink';    
+
+
+
+        </script>
+
+    <title>Circle</title>
+</head>
+<body>
+    <canvas id="myCanvas" resize></canvas>
+
+</body>
+</html>
