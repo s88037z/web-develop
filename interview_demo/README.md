@@ -20,7 +20,7 @@
 
 ## 2.靜態網頁demo:
 * Patatap Clone  
-  url:https://s88037z.github.io/udemy_demo/PatatapClone/  
+  https://s88037z.github.io/udemy_demo/PatatapClone/  
   github:https://github.com/s88037z/s88037z.github.io/tree/master/udemy_demo/PatatapClone
 * Todo List  
   https://codepen.io/s88037z/pen/xxxyjVB  
