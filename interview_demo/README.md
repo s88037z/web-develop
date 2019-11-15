@@ -3,8 +3,8 @@
 ## 1.Demo網站:TaiwanFan 
 簡介:分享、紀錄你在台灣的私房地點!  
   
-網址: https://taiwanfan-1116.herokuapp.com/  
-  
+網址   :https://taiwanfan-1116.herokuapp.com/  
+github :https://github.com/s88037z/web-develop/tree/master/interview_demo/Taiwanfan/v1
 主要使用工具:(nodejs、express、mongoDB、Bootstrap4)  
   
 ### 功能介紹:
