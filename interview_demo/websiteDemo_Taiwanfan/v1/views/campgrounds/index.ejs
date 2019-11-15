@@ -1,0 +1,72 @@
+<% include ../partials/header %>
+
+	
+	<header class="jumbotron">
+		<div class="container">  <!--  <== this seem not necessary  -->
+			<h1><i class="fas fa-book"></i> Welcome to TaiwanFan</h1>
+			<p>用文字駐腳、分享你在台灣最美的私藏</p>
+			<p>
+				<a class="btn btn-primary btn-lg mb-2" href="/campgrounds/new">分享一個私房地點</a>
+			</p>
+			<p>
+				<form class="form-inline" action="/campgrounds" method="GET">
+					<div class="form-group inline">
+						<input class="mr-sm-1 form-control" type="text" name="search" placeholder="地點搜尋">
+						<input  class="btn btn-light" type="submit" value="搜尋"> 
+					</div>
+				</form>		
+			</p>
+			
+			
+		</div>
+	</header>
+
+	<div class="row mb-3">
+			<div class="list-group list-group-horizontal-sm row mx-auto  pr-0 col-10 col-md-6 text-center">
+			  <a id="all"class="list-group-item col list-group-item-action" href="/campgrounds">all</a>
+			  <a id="scene" class="list-group-item col list-group-item-action" 
+				 href="/campgrounds?category=scene">風景</a>
+			  <a id="culture" class="list-group-item col list-group-item-action" 
+				 href="/campgrounds?category=culture">文化</a>
+			  <a id="food" class="list-group-item col list-group-item-action" href="/campgrounds?category=food">美食</a>
+			  <a id="recreation" class="list-group-item col list-group-item-action"
+				 href="/campgrounds?category=recreation">娛樂</a>
+			</div>
+
+		<div class="col-lg-12">
+			<h3>收藏地點:</h3>
+		</div>
+	</div>
+	
+	<% if(noCamps!==undefined){ %>
+		<h5><%= noCamps %></h5>
+		
+	<% } %>
+	<div id="campgrounds-index" class="row text-center">
+		<% campgrounds.forEach((camp)=>{ %>
+		  <div class="col-md-3 col-sm-6 mb-4">
+			  <div class="card">
+				<img class="card-img-top" src="<%=camp.image%>">
+				<div class="card-body p-3">
+					<h5 class="card-title m-0"><%=camp.name%></h5>
+			   </div>
+			   <p>
+				   <a href="/campgrounds/<%=camp._id %>" class="btn btn-primary">更多資訊</a>
+			   </p>
+			</div> 
+		  </div>
+
+		<% }) %>
+	</div>
+	
+<!--active the category tag  -->
+<script>
+	if("<%=category %>"){
+	   $("#<%=category %>").addClass("active")
+	   }
+	else{$("#all").addClass("active")}
+	
+</script>
+
+
+<% include ../partials/footer %>

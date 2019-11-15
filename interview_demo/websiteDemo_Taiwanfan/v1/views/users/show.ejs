@@ -1,0 +1,66 @@
+<% include ../partials/header %>
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="card">
+			  <img src="<%=user.avatar%>" class="card-img-top" alt="user's avatar">
+			  <div class="card-body">
+				<h5 class="card-title"><%=user.lastName%><%=user.firstName%></h5>
+				<p class="card-text"><%if(user.description){%><%=user.description%><%}else{%>自我介紹一下吧...
+					
+					<%}%>
+				 </p>
+				<% if(currentUser && user._id.equals(currentUser._id) 
+					|| currentUser && currentUser.isAdmin ){ %>  
+				<a href="/users/<%=user._id%>/edit" class="btn btn-primary">編輯個人資料</a>
+				<% } %>
+			  </div>
+		</div>
+	</div>
+	
+	<div class="col-md-8">
+		<h3><%=user.username%>的私藏地點 :</h3>
+		
+		<div class="row">
+			<% campgrounds.forEach((camp)=>{ %>
+			<div class="col-12 mx-auto mb-3">
+				<div id="campsDisplay_inProfile" class="card">
+					<div class="row"   >
+						<div class="col-7 pl-0 pb-0">
+							<div class="card-body">
+								<h5 class="card-title "><%=camp.name%></h5>
+								<p class="card-text "><%=camp.description%></p>
+								<a href="/campgrounds/<%=camp._id %>" class="btn btn-primary">更多資訊</a>
+							</div>
+						</div>
+						
+						<div class="col-5 my-auto">
+							<img class="img-thumbnail " src="<%=camp.image%>">
+						</div>
+					  
+					</div> 
+				</div>	
+			</div>
+ 
+			<% }) %>
+		</div>
+		
+		
+		
+		
+		
+		<!-- <ul>
+
+			<% campgrounds.forEach((campground)=>{ %>
+				<li><a href="/campgrounds/<%=campground._id%>"><%=campground.name%></a></li>
+			
+			<%  }) %>
+		</ul> -->
+		
+	</div>
+	
+</div>
+
+
+
+<% include ../partials/footer %>

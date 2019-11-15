@@ -1,0 +1,72 @@
+<% include ../partials/header %>
+
+
+  <div class="row">	
+	<h1 class="col-12 text-center">分享一個新地點</h1>
+	  
+	<div id="campground-form" >
+		<form class="col-12 form-group" action="/campgrounds" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="campground-name">地點名稱</label>
+				<input class="form-control" id="campground-name" 
+					   name="campground[name]"  placeholder="" type="text" required>
+			</div>
+			
+			<div class="form-group">
+				<label  for="campground-category">地點類型</label>
+				<div class="input-group">
+				  <select  name="campground[category]" class="custom-select"  id="campground-category" required>
+					<option selected value="">選擇</option>
+					<option value="scene">風景</option>
+					<option value="culture">文化</option>
+					<option value="food">美食</option>
+					<option value="recreation">娛樂</option>
+				  </select>
+				</div>
+			</div>
+			
+			
+			<div class="form-group">
+				<label for="campground-price">費用</label>
+				<input class="form-control" id="campground-price" name="campground[price]"  placeholder="NT$" 
+					   type="number" min="0" step="1" required>
+			</div>
+			<!-- <div class="form-group">
+                    <label for="image">Image</label>
+                    <input  class="form-control" type="file" id="image" name="image" accept="image/*" required>
+            </div> -->
+			
+			<div class="form-group">
+				<label for="image">圖片</label>
+				<div class="input-group mb-3">
+				  <div class="custom-file">
+					<input type="file" class="custom-file-input" 
+						   name="image"  id="image" accept="image/*" required>
+					<label class="custom-file-label" for="image" >選擇檔案</label>
+				  </div>
+				</div>		
+			</div>
+	
+			<div class="form-group">
+    			<label for="location">位置</label>
+    			<input class="form-control" type="text" name="campground[location]" 
+					   id="location" placeholder="ex:台北市文山區">
+			</div>		
+				
+			<div class="form-group">
+				<label for="location">心得介紹</label>
+				<textarea  id="campground-description" class="form-control" name="campground[description]" 
+				  placeholder="你的想法..."required></textarea>
+			</div>
+	
+			<div class="form-group text-left">
+				<button class="btn btn-lg btn-primary btn-block" >提交</button>
+			</div>			
+				<a class="col-12" href="/campgrounds">返回</a>
+		</form>
+	</div>
+	  
+
+  </div>
+
+<% include ../partials/footer %>

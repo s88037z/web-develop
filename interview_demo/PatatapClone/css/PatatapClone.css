@@ -1,0 +1,31 @@
+canvas{
+    width: 100%;
+    background-color:black;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    font-family: "Noto Serif TC";
+}
+
+
+.message{
+    display: inline-block;
+    background-color:#eee;
+    border-radius: 10.56px;
+    padding: 5%;
+    width:250px;
+    text-align: center;
+
+}
+
+.hint{
+    position: absolute;
+    top:20%;
+    left:40%;
+}
+
+.closed{
+    display: none;
+}

@@ -19,10 +19,18 @@ github :https://github.com/s88037z/web-develop/tree/master/interview_demo/Taiwan
 * 使用flash message
 
 ## 2.靜態網頁demo:
+<<<<<<< Updated upstream
 * Patatap Clone  
   https://s88037z.github.io/udemy_demo/PatatapClone/  
   github:https://github.com/s88037z/s88037z.github.io/tree/master/udemy_demo/PatatapClone
 * Todo List  
+=======
+* Patatap Clone 
+  https://s88037z.github.io/udemy_demo/PatatapClone/  
+  github:https://github.com/s88037z/s88037z.github.io/tree/master/udemy_demo/PatatapClone  
+
+* Todo List 
+>>>>>>> Stashed changes
   https://codepen.io/s88037z/pen/xxxyjVB  
 * psd to html 切版練習
 * museum of candy

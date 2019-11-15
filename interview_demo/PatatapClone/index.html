@@ -1,0 +1,159 @@
+<<<<<<< Updated upstream:interview_demo/PatatapClone/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/PatatapClone.css">
+    <script type="text/javascript" src="js\lib\paper-full.js"></script>
+    <script type="text/javascript" src="js\lib\howler.js"></script>
+
+
+    <script type="text/javascript" src="js\data.js"></script>
+
+    <script type="text/paperscript" canvas="myCanvas">
+
+        // set the data object in "js\data.js" 
+        // the data looks like this:
+        // 
+        // var keyData={
+        //     a:{
+        //         color:"purple",
+        //         sound: new Howl({
+        //         src: ['sounds/bubbles.mp3']
+        //         }),
+        //     },
+
+        // }........
+
+    
+
+        function onKeyDown(event) {
+
+            var maxPoint= new Point(view.size.width,view.size.height);
+            var randomPoint= Point.random(); //x,y range(0-1)
+            var point=(maxPoint*randomPoint);
+            myCircle=new Path.Circle(point, 500)
+
+
+            if(data[event.key]){
+                myCircle.fillColor=data[event.key].color;
+                data[event.key].sound.play();
+            }
+            else{
+                myCircle.fillColor = 'yellow';
+            }
+            circleArray.push(myCircle)
+   
+
+        }
+
+        circleArray=[];
+        function onFrame(event) {
+        // Each frame, change the fill color of the path slightly by
+        // adding 1 to its hue:
+            for(var i=0;i<circleArray.length;i++){
+                circleArray[i].fillColor.hue += 1;
+                circleArray[i].scale(.9);
+
+                if(circleArray[i].area<1){
+                    circleArray[i].remove();
+                    circleArray.splice(i,i+1);
+                }
+            }
+        }
+
+
+
+    </script>
+    <title>Circle</title>
+</head>
+<body>
+    <canvas id="myCanvas" resize></canvas>
+
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/PatatapClone.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js\lib\paper-full.js"></script>
+    <script type="text/javascript" src="js\lib\howler.js"></script>
+
+
+    <script type="text/javascript" src="js\data.js"></script>
+
+    <script type="text/paperscript" canvas="myCanvas">
+
+    
+
+    
+
+        function onKeyDown(event) {
+
+            var maxPoint= new Point(view.size.width,view.size.height);
+            var randomPoint= Point.random(); //x,y range(0-1)
+            var point=(maxPoint*randomPoint);
+            myCircle=new Path.Circle(point, 500)
+
+
+            if(data[event.key]){
+                myCircle.fillColor=data[event.key].color;
+                data[event.key].sound.play();
+            }
+            else{
+                myCircle.fillColor = 'yellow';
+            }
+            circleArray.push(myCircle)
+   
+
+        }
+
+        circleArray=[];
+        function onFrame(event) {
+        // Each frame, change the fill color of the path slightly by
+        // adding 1 to its hue:
+            for(var i=0;i<circleArray.length;i++){
+                circleArray[i].fillColor.hue += 1;
+                circleArray[i].scale(.9);
+
+                if(circleArray[i].area<1){
+                    circleArray[i].remove();
+                    circleArray.splice(i,i+1);
+                }
+            }
+        }
+
+
+
+    </script>
+   
+    <title>PatatapClone</title>
+</head>
+<body>
+    <div class="hint">
+        <p class="message">請按下任意按鈕，並打開喇叭</p>
+    </div>
+    
+    <canvas id="myCanvas" resize></canvas>
+    
+
+
+    <script type="text/javascript">
+        var body= document.querySelector("body");
+        body.addEventListener("keypress",function(){
+            document.querySelector(".message").classList.add("closed");
+        })    
+    </script>
+
+</body>
+
+
+</html>
+>>>>>>> Stashed changes:interview_demo/ProjectFile/PatatapClone.html

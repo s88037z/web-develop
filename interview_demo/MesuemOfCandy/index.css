@@ -1,0 +1,8 @@
+nav>.container >.navbar-brand{
+    text-transform: uppercase;
+}
+
+#header{
+    text-align: center;
+    background: url("imgs/header.jpeg") center center / cover no-repeat;
+}
