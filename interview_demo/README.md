@@ -1,7 +1,7 @@
 # 作品介紹
 
 ## 1.Demo網站:TaiwanFan 
-簡介:分享、紀錄你在台灣的私房地點!  
+簡介:分享、紀錄台灣的私房地點的app  
   
 網址   :https://taiwanfan-1116.herokuapp.com/  
 github :https://github.com/s88037z/web-develop/tree/master/interview_demo/Taiwanfan/v1
@@ -9,8 +9,8 @@ github :https://github.com/s88037z/web-develop/tree/master/interview_demo/Taiwan
   
 ### 功能介紹:
 * 使用RESTful routes
-* 會員可以新增地點、評論
-* 會員認證(authenticate)功能(使用passprot,express-session)
+* 具有會員系統，會員可以新增地點、評論等
+* 有會員認證(authenticate)功能(使用passprot,express-session)
 * 圖片上傳功能(使用雲端平台cloudinary)
 * 模糊搜尋標題
 * 顯示地點的google地圖
