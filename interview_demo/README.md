@@ -39,9 +39,10 @@ github :https://github.com/s88037z/web-develop/tree/master/interview_demo/Taiwan
   https://s88037z.github.io/udemy_demo/Psd_to_html_rwd/  
   github: https://github.com/s88037z/web-develop/tree/master/interview_demo/Psd_to_html_rwd  
   
-* Bootstrap4 網頁練習
+* Bootstrap4 網頁設計練習
   Demo1.Museum of candy  
-  https://s88037z.github.io/udemy_demo/MesuemOfCandy/museumOfCandy/
+  https://s88037z.github.io/udemy_demo/MesuemOfCandy/museumOfCandy/  
+  github:https://github.com/s88037z/s88037z.github.io/tree/master/udemy_demo/MesuemOfCandy/museumOfCandy  
   
   Demo2.PATTERN
   https://s88037z.github.io/udemy_demo/MesuemOfCandy/Pattern/
