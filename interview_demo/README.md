@@ -44,7 +44,7 @@ github :https://github.com/s88037z/web-develop/tree/master/interview_demo/Taiwan
   https://s88037z.github.io/udemy_demo/MesuemOfCandy/museumOfCandy/  
   github:https://github.com/s88037z/s88037z.github.io/tree/master/udemy_demo/MesuemOfCandy/museumOfCandy  
   
-  Demo2.PATTERN
+  Demo2.PATTERN  
   https://s88037z.github.io/udemy_demo/MesuemOfCandy/Pattern/
   github:https://github.com/s88037z/s88037z.github.io/tree/master/udemy_demo/MesuemOfCandy/Pattern
   
