@@ -18,7 +18,7 @@ github :https://github.com/s88037z/web-develop/tree/master/interview_demo/Taiwan
 * 密碼重設功能(寄送認證信)
 * 使用flash message
 
-## 2.靜態網頁demo:  
+## 2.靜態網頁Demo:  
 * Patatap Clone (javascript動畫操作，使用paper.js):  
   簡介:輸入不同按鍵產生動畫特效  
   https://s88037z.github.io/udemy_demo/PatatapClone/  
